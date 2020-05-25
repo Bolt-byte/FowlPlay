@@ -39,7 +39,7 @@ class SettingsOther extends JPanel
  JLabel redLabel, blueLabel, greenLabel, yellowLabel, pinkLabel; 
  JLabel describeLabel, colorLabel; 
  JButton redButton, blueButton, greenButton, yellowButton, pinkButton; 
- String c; 
+ String c;  //this actually doesnt do anything (yet)
  Boolean greenUnlock, yellowUnlock, pinkUnlock; 
   
  public SettingsOther() 
