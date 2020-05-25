@@ -22,7 +22,7 @@ public class Settings extends JFrame
  { 
    settingsFrame = new JFrame("Settings"); 
    settingsFrame.setLocation(0,0); 
-   settingsFrame.setSize(500,500); 
+   settingsFrame.setSize(700 ,500); 
    settingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
    settingsFrame.setBackground(Color.gray); 
    
@@ -39,13 +39,13 @@ class SettingsOther extends JPanel
  JLabel redLabel, blueLabel, greenLabel, yellowLabel, pinkLabel; 
  JLabel describeLabel, colorLabel; 
  JButton redButton, blueButton, greenButton, yellowButton, pinkButton; 
- String c; 
+ static Color c;  //this actually doesnt do anything (yet)
  Boolean greenUnlock, yellowUnlock, pinkUnlock; 
   
  public SettingsOther() 
  { 
   //panel layout 
-  setLayout(new GridLayout(2,6)); 
+  setLayout(new GridLayout(6,2)); 
    
   //init components 
   describeLabel = new JLabel("Click a button below to set your player Color!"); 
@@ -91,6 +91,9 @@ class SettingsOther extends JPanel
    
   pinkButtonHandler click5 = new pinkButtonHandler(); 
   pinkButton.addActionListener(click5); 
+  
+  //set variables
+  greenUnlock = false; yellowUnlock = false; pinkUnlock = false;
  } 
   
  class redButtonHandler implements ActionListener 
@@ -105,7 +108,7 @@ class SettingsOther extends JPanel
    } 
    else 
    { 
-    c = "RED"; 
+    c = Color.red; 
     redButton.setText("Red"); 
    } 
   } 
@@ -123,7 +126,7 @@ class SettingsOther extends JPanel
    } 
    else 
    { 
-    c = "BLUE"; 
+    c = Color.blue; 
     blueButton.setText("Blue"); 
    } 
   } 
@@ -150,7 +153,7 @@ class SettingsOther extends JPanel
    } 
    if(pressButton.contentEquals("Are you sure?")) 
    { 
-    c = "GREEN"; 
+    c = Color.green; 
     greenButton.setText("Green"); 
    } 
   } 
@@ -177,7 +180,7 @@ class SettingsOther extends JPanel
    } 
    if(pressButton.contentEquals("Are you sure?")) 
    { 
-    c = "YELLOW"; 
+    c = Color.yellow; 
     yellowButton.setText("Yellow"); 
    } 
   } 
@@ -197,14 +200,14 @@ class SettingsOther extends JPanel
      pinkButton.setText("Are you sure?"); 
  
    } 
-   if(pressButton.contentEquals("Do you want to buy Yellow for 500 coins?")) 
+   if(pressButton.contentEquals("Do you want to buy Pink for 500 coins?")) 
    { 
     pinkUnlock = true; 
     pinkButton.setText("Pink"); 
    } 
    if(pressButton.contentEquals("Are you sure?")) 
    { 
-    c = "YELLOW"; 
+    c = Color.pink;
     pinkButton.setText("Pink"); 
    } 
   } 

@@ -70,18 +70,17 @@ class MainMenu //main menu frame
  
  class MainMenuButtonHandler implements ActionListener //ButtonHandler
  {
-  
-  
   public void actionPerformed (ActionEvent e)
   {
    String buttonPressed = e.getActionCommand();
    
    if(buttonPressed.contentEquals("Play!"))
    {
-    //take user to the play frame + start timers
-    /* mainMenuFrame.setVisible(false);
-     * mainMenuFrame.dispose(); */
-    Timers.start();
+     //take user to the play frame + start timers
+     mainMenuFrame.setVisible(false);
+     mainMenuFrame.dispose();
+     Timers.start();
+     Gameplay runGame = new Gameplay();
    }
    
    if(buttonPressed.contentEquals("Introduction"))
@@ -89,11 +88,10 @@ class MainMenu //main menu frame
        //create introduction frame + panel
    }
    
-   if(buttonPressed.contentEquals("Settings"))
+   if(buttonPressed.contentEquals("Settings")) //this doesn't work, i don't know why
    {
      Settings settingRunner = new Settings();
      settingRunner.settingsFrame.setVisible(false);
-    
    }
          
    if(buttonPressed.contentEquals("Quit Game"))
